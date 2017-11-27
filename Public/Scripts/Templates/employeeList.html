@@ -1,0 +1,63 @@
+﻿<div class="main-container">
+    <br />
+    <div class="row" >
+        <div class="col-xs-6" >
+            <h1>Employees</h1>
+        </div>
+        <div class="col-xs-6">
+            <br />
+            <button class="btn btn-primary" ng-click="addEmployee()" ng-if="!IsEditMode" >Add Employee</button>
+        </div>
+    </div>
+    
+    <br /><BR />
+
+    <employees-details  ng-if="IsEditMode" employee="employee" on-cancel="onEditCancel()" on-success="onEditSuccess()" ></employees-details>
+
+    <div class="table empl" ng-if="!IsEditMode" >
+        <div class="row">
+
+            <div class="col-xs-2">
+                <strong>ID</strong>
+            </div>
+            <div class="col-xs-1">
+                <strong>Name</strong>
+            </div>
+            <div class="col-xs-2">
+                <strong>Birthdate</strong>
+            </div>
+            <div class="col-xs-2">
+                <strong>Email</strong>
+            </div>
+            <div class="col-xs-1">
+                <strong>Phone</strong>
+            </div>
+            <div class="col-xs-2">
+                <strong>Actions</strong>
+            </div>
+        </div>
+
+        <div class="row" ng-repeat="empl in employees">
+
+            <div class="col-xs-2">
+                {{empl._id}}
+            </div>
+            <div class="col-xs-1">
+                {{empl.Name}}
+            </div>
+            <div class="col-xs-2">
+                {{empl.Birthdate}}
+            </div>
+            <div class="col-xs-2">
+                {{empl.Email}}
+            </div>
+            <div class="col-xs-1">
+                {{empl.Phone}}
+            </div>
+            <div class="col-xs-2">
+                <input type="button" class="btn btn-primary" value="Edit" ng-click="Edit(empl)" />&nbsp;
+                <input type="button" class="btn default" value="Delete" ng-click="Delete(empl)" />
+            </div>
+        </div>
+    </div>
+</div>

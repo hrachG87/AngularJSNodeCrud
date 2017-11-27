@@ -1,0 +1,25 @@
+﻿
+.main-container
+{
+    width: 1200px;
+    margin: auto;
+}
+
+.table.empl .row > div {
+    border: 1px solid #000;
+    min-height: 60px;
+    padding-top: 10px;
+}
+
+.row
+{
+    margin-bottom: 10px;
+}
+
+input.ng-touched.ng-invalid {
+    border: 1px solid red;
+}
+
+.error-message{
+    color: red;
+}

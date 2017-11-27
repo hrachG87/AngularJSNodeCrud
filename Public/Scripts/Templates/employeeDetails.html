@@ -1,0 +1,81 @@
+﻿<div class="main-container">
+    <br />
+    <div class="row" >
+        <div class="col-xs-6" >
+            <strong>Details</strong>
+        </div>
+    </div>
+    
+    <br /><BR />
+
+    <form novalidate="novalidate" name="form" id="form">
+        <div class="error-message" ng-if="errorMessage != null" >
+            <strong>{{errorMessage}}</strong>
+            <BR /><BR />
+        </div>
+
+        <div class="table">
+            <div class="row">
+                <div class="col-xs-3">
+                    ID
+                </div>
+                <div class="col-xs-2">
+                    {{$ctrl.employee._id}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3">
+                    Name
+                </div>
+                <div class="col-xs-2">
+                    <input type="text" ng-model="$ctrl.employee.Name" name="Name" required maxlength="50"  />
+                    <div ng-show="form.$submitted || form.Name.$touched" >
+                        <div class="error-message" ng-show="form.Name.$error.required">Please insert value</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3">
+                    Birthdate
+                </div>
+                <div class="col-xs-2">
+                    <input type="date" ng-model="$ctrl.employee.Birthdate" name="Birthdate" required />
+                    <div ng-show="form.$submitted || form.Name.$touched">
+                        <div class="error-message" ng-show="form.Birthdate.$error.required">Please insert value</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3">
+                    Email
+                </div>
+                <div class="col-xs-2">
+                    <input type="email" ng-model="$ctrl.employee.Email" required name="Email"  />
+                    <div ng-show="form.$submitted || form.Name.$touched">
+                        <div class="error-message" ng-show="form.Email.$error.required">Please insert value</div>
+                        <div class="error-message" ng-show="form.Email.$error.email">Please insert valid email address</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3">
+                    Phone
+                </div>
+                <div class="col-xs-2">
+                    <input type="text" ng-model="$ctrl.employee.Phone" required name="Phone" />
+                    <div ng-show="form.$submitted || form.Phone.$touched">
+                        <div class="error-message" ng-show="form.Phone.$error.required">Please insert value</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 text-right">
+                    <button type="button" class="btn btn-default" ng-click="$ctrl.onCancel()" >Cancel</button>&nbsp;
+                    <button type="submit" class="btn btn-primary" ng-click="save(form)">Save</button>&nbsp;
+                </div>
+            </div>
+        </div>
+    </form>
+
+    
+</div>
